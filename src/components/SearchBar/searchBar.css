@@ -1,0 +1,158 @@
+.searchBar-section{
+    width: 100%;
+
+}
+
+.filters-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 1.6rem;
+    padding-bottom: 5%;
+}
+.filters-container *{
+    transition: all 0.1s ease-in-out;
+}
+
+.filters-container section{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filters-container input{
+    transition: all 0.3s ease-in-out;
+}
+.filters-container input:focus{
+    background-color: var(--tertiary-color);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.searchBar{
+    border-radius: 50rem;
+    background-color: var(--info-color);
+}
+
+.searchBar input{
+    width: 85%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding:  0 5%;
+    border: none;
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-button-container{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    border: none;
+    background-color: var(--info-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.search-button-container:hover{
+    background-color: var(--info-color-hover);
+    transition: all 0.3s ease-in-out;
+}
+.search-button-container:active{
+    background-color: var(--info-color-active);
+    transition: all 0.3s ease-in-out;
+}
+
+.date-filters{
+    display: flex;
+    justify-content: space-between;
+}
+.date-filters_inputContainer{
+    width: 48%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 50rem;
+    color: white;
+}
+
+.date-filters_inputContainer input{
+    width: 100%;
+    height: 50%;
+    border: none;
+    outline: none;
+    padding: 0 5%;
+    border: none;
+    border-radius: 50rem;
+    transition: all 0.3s ease-in-out;
+}
+.filters_checkbox-input-container{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: white;
+}
+.clear-filters-button{
+    width: 90%;
+    height: 50px;
+    border-radius: 50rem;
+    border: none;
+    outline: none;
+    background-color: var(--warning-color);
+    color: black;
+    font-weight: bold;
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+/*! ########################################*/
+/*! ##### TABLETS & LARGER SMARTPHONES #####*/
+/*! ########################################*/
+@media (min-width: 530px) {
+    .filters-container section{
+        width: 80%;
+    }
+    .filters-container{
+        font-size: 1.8rem;
+    }
+    .clear-filters-button{
+        width: 50%;
+    }
+}
+
+
+
+/*! ########################################*/
+/*! ############### LAPTOPS ###############*/
+/*! ########################################*/
+@media (min-width: 950px) {
+    .filters-container section{
+        width: 70%;
+    }
+
+    .filters-container{
+        font-size: 2em;
+    }
+
+    .clear-filters-button:hover{
+        background-color: var(--warning-color-hover);
+    }
+    .clear-filters-button:active{
+        background-color: var(--warning-color-active);
+    }
+}
