@@ -1,0 +1,49 @@
+header{
+    height: 76px;
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  0 3%;
+    border: 1px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+.logo-header{
+    height: 50px;
+}
+
+/*! ########################################*/
+/*! ##### TABLETS & LARGER SMARTPHONES #####*/
+/*! ########################################*/
+@media (min-width: 530px) {
+    h1{
+        font-size: 3rem;
+    }
+    .logo-header{
+        height: 60px;
+    }
+}
+
+
+
+/*! ########################################*/
+/*! ############### LAPTOPS ###############*/
+/*! ########################################*/
+@media (min-width: 950px) {
+    header{
+        height: 96px;
+    }
+    .logo-header{
+        height: 80px;
+    }
+
+
+}
