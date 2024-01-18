@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import './App.css'
 
 const Clients = lazy(() => import('./pages/Clients'))
 const NotFound = lazy(() => import('./pages/NotFound'))
