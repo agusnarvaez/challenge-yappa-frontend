@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Suspense, lazy } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+const Clients = lazy(() => import('./pages/Clients'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+
+export default function App() {
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Suspense fallback={<div className='loader'></div>}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Clients />}/>
+          <Route path="/*" element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
+
   )
 }
-
-export default App
