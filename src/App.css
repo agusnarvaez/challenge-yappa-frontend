@@ -51,7 +51,7 @@ body{
 main{
     background-color: var(--secondary-color);
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 5% 0;
@@ -69,11 +69,7 @@ main{
 .notFoundPage *{
     font-family: Rubik,sans-serif;
 }
-.notFoundPage img{
-    width: 80%;
-    object-fit: cover;
-    max-width: 300px;
-}
+
 .notFoundPage h1{
     font-size: 15rem;
     font-family: Rubik,sans-serif;
@@ -121,142 +117,11 @@ main{
 
     .notFoundPage{
         padding: 5%;
-        flex-direction: row;
+
     }
-    .notFoundPage img{
-        max-width: 50%;
-    }
+
     .notFoundPage section{
         width: 50%;
     }
 }
 
-
-:root {
-  --primary-bg-color: #ffffff;
-  --primary-color: #ffd300;
-  --primary-color-light: #ffde4d67;
-  --secondary-color: #202128;
-  --tertiary-color: #1f1f1fde;
-  --danger-color: #c22920;
-  --danger-color-hover: #a31d18;
-  --danger-color-active: #8f1a15;
-  --success-color: #1fe1ba;
-  --success-color-hover: #1cc4a2;
-  --success-color-active: #1aa38f;
-  --warning-color: #ffff00;
-  --warning-color-hover: #e6e600;
-  --warning-color-active: #cccc00;
-  --info-color: #b45cff;
-  --info-color-hover: #a34cff;
-  --info-color-active: #8f3cff;
-  --light-color: #ffffff;
-  --primary-font: 'Raleway', sans-serif;
-  --primary-font-size: 1.6rem;
-  --secondary-font-size: 1.4rem;
-}
-
-* {
-  font-family: var(--primary-font);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  min-height: 100vh;
-  width: 100%;
-  scroll-behavior: smooth;
-  -webkit-tap-highlight-color: transparent;
-}
-
-
-html {
-  font-size: 10px;
-}
-body{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-main{
-  background-color: var(--secondary-color);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  padding: 5% 0;
-  min-height: 100vh;
-}
-
-.notFoundPage{
-  background-color: white;
-}
-.notFoundPage section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.notFoundPage *{
-  font-family: Rubik,sans-serif;
-}
-.notFoundPage img{
-  width: 80%;
-  object-fit: cover;
-  max-width: 300px;
-}
-.notFoundPage h1{
-  font-size: 15rem;
-  font-family: Rubik,sans-serif;
-}
-.notFoundPage p{
-  width: 50%;
-  font-size: 2.5rem;
-  font-weight: lighter;
-  text-align: center;
-  margin-top: 5%;
-}
-.users-not-found{
-  color: var(--light-color);
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 5%;
-}
-.notFoundPage a{
-  color: var(--light-color);
-  background-image: linear-gradient(71deg,#e01313,#a50000);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 3% 5% ;
-  border-radius: 20px;
-  margin: 5% 0;
-  text-decoration: none;
-}
-
-/*! ########################################*/
-/*! ##### TABLETS & LARGER SMARTPHONES #####*/
-/*! ########################################*/
-@media (min-width: 530px) {
-
-  main{
-      padding: 3% 0;
-  }
-}
-
-/*! ########################################*/
-/*! ################ LAPTOPS ###############*/
-/*! ########################################*/
-@media (min-width: 990px) {
-
-  .notFoundPage{
-      padding: 5%;
-      flex-direction: row;
-  }
-  .notFoundPage img{
-      max-width: 50%;
-  }
-  .notFoundPage section{
-      width: 50%;
-  }
-}
