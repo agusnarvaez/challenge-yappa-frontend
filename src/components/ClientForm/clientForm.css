@@ -1,0 +1,172 @@
+.user-form{
+    width: 100%;
+}
+
+.user-form form{
+    min-height: 350px;
+    padding: 3% 5%;
+    width: 100%;
+    display: flex;
+    position:relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 1.6rem;
+    border-top: 0.1px solid var(--primary-color-light);
+    border-bottom: 0.1px solid var(--primary-color-light);
+}
+.user-form_inputContainer{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user-form_checkbox-input-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.user-form_inputContainer input{
+    width: 100%;
+    height: 30px;
+    border-radius: 50rem;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    /* font-size: 2rem; */
+    padding: 0 5%;
+    /* margin-bottom: 5%; */
+}
+.user-form_inputContainer input::placeholder{
+    font-weight:normal;
+}
+.user-form_inputContainer input:focus{
+    border: 1.5px solid var(--info-color);
+}
+
+.user-form_inputContainer label{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.user-form button{
+    border:none;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.user-form_button-add{
+    background-color: var(--success-color);
+}
+.user-form_button-add:hover{
+    background-color: var(--success-color-hover);
+}
+.user-form_button-add:active{
+    background-color: var(--success-color-active);
+}
+.user-form_button-edit{
+    background-color: var(--info-color);
+}
+.user-form_button-edit:hover{
+    background-color: var(--info-color-hover);
+    color: white;
+}
+.user-form_button-edit:active{
+    background-color: var(--info-color-active);
+}
+.user-form_button-delete{
+    background-color: var(--danger-color);
+    color: white;
+}
+.user-form_button-delete:hover{
+    background-color: var(--danger-color-hover);
+}
+.user-form_button-delete:active{
+    background-color: var(--danger-color-active);
+}
+
+.notification,
+.notification_success,
+.notification_failure{
+    position: sticky;
+    top: 95px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+.notification_success{
+    background-color: var(--success-color);
+    color: white;
+    padding: 1% 3%;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 1% 0;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+.notification-failure{
+    color: white;
+    padding: 1% 3%;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 1% 0;
+    display: block;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--danger-color);
+}
+
+/*! ########################################*/
+/*! ##### TABLETS & LARGER SMARTPHONES #####*/
+/*! ########################################*/
+@media (min-width: 530px) {
+    .user-form form{
+        min-height: 300px;
+        padding: 1% 3%;
+    }
+    .user-form_inputContainer label{
+        min-height: 20px;
+    }
+}
+
+.errors-container{
+    width: 100%;
+    padding: 0% 5% ;
+    display: flex;
+    flex-wrap: wrap;
+}
+.errors-container span{
+    width: 50%;
+    padding: 1% 0;
+    color:var(--danger-color)
+}
+
+/*! ########################################*/
+/*! ############### LAPTOPS ###############*/
+/*! ########################################*/
+@media (min-width: 950px) {
+
+    .user-form form{
+        min-height: 160px;
+        padding: 1% 1%;
+    }
+    .user-form_inputContainer label{
+        min-height: 10px;
+    }
+    .user-form_checkbox-input-container,
+    .user-form_inputContainer{
+        width: 19%;
+    }
+}
