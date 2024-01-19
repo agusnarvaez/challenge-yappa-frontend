@@ -120,6 +120,10 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+.clear-filters-button:active{
+    background-color: var(--warning-color-active);
+    transform: scale(0.9);
+}
 /*! ########################################*/
 /*! ##### TABLETS & LARGER SMARTPHONES #####*/
 /*! ########################################*/
@@ -151,8 +155,10 @@
 
     .clear-filters-button:hover{
         background-color: var(--warning-color-hover);
+        transform: scale(0.95);
     }
     .clear-filters-button:active{
         background-color: var(--warning-color-active);
+        transform: scale(0.9);
     }
 }
