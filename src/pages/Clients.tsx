@@ -39,7 +39,7 @@ export default function Clients() {
               </div>
             }
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} reload={reload} setReload={setReload} />
-            <ClientForm  client={emptyClient} edition={false} setNotification={setNotification}/>
+            <ClientForm  client={emptyClient} setNotification={setNotification}/>
             {
               clients.length > 0 ?
               clients.map((client) => <ClientForm key={client.id} client={client} edition setNotification={setNotification} />)

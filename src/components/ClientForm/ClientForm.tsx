@@ -7,19 +7,20 @@ import { Notification } from '../../pages/Clients'
 
 interface Props {
   client: Client
-  edition:boolean
+  edition?:boolean
   setNotification: React.Dispatch<React.SetStateAction<Notification>>
 }
 const emptyNotification:Notification = {
   message:"",
   type:""
 }
-interface HttpError {
-  response: {
-    data: {
-      errors: { msg: string }[];
-    };
-  };
+export interface HttpError {
+  response?: {
+    data?: {
+      errors: { msg: string }[]
+    }
+  }
+  msg?: string // Agregado para permitir errores de validación directos
 }
 export const ClientForm:React.FC<Props> = ({client,edition,setNotification})=> {
     const [name, setName] = useState(client.name)
@@ -44,7 +45,6 @@ export const ClientForm:React.FC<Props> = ({client,edition,setNotification})=> {
       const clientToUpdate = new Client(client.id, name, last_name, birth_date!=""?birth_date:null, cuit, address!=""?address:null, phone_number, email)
 
       if(!edition){
-        console.log("creando")
         try{
           await clientsService.create(clientToUpdate)
           clearForm()
@@ -125,18 +125,17 @@ export const ClientForm:React.FC<Props> = ({client,edition,setNotification})=> {
       }
     }
     useEffect(() => {
-      /* console.log(errors) */
-    }, [name, last_name, birth_date, cuit, address, phone_number, email,errors])
+    }, [errors])
     return (
       <article className='user-form'>
         <form  onSubmit={submitForm}>
-          <Input type="text" placeholder="Nombre" value={name} setValue={setName}id={`name-${client.id}`} label={'Nombre'} />
-          <Input type="text" placeholder="Apellido" value={last_name} setValue={setLastName}id={`last_name-${client.id}`} label={'Apellido'} />
-          <Input type="date" placeholder="Fecha de Nacimiento" value={birth_date} setValue={setBirthDate}id={`birth_date-${client.id}`} label={'Fecha de Nacimiento'} />
-          <Input type="text" placeholder="CUIT" value={cuit} setValue={setCuit}id={`cuit-${client.id}`} label={'CUIT'} />
-          <Input type="text" placeholder="Dirección" value={address} setValue={setAddress}id={`address-${client.id}`} label={'Dirección'} />
-          <Input type="text" placeholder="Teléfono" value={phone_number} setValue={setPhoneNumber}id={`phone_number-${client.id}`} label={'Teléfono'} />
-          <Input type="text" placeholder="Email" value={email} setValue={setEmail}id={`email-${client.id}`} label={'Email'} />
+          <Input type="text" placeholder="Nombre" value={name} setValue={setName} id={`name-${client.id}`} label={'Nombre'} required setErrors={setErrors}/>
+          <Input type="text" placeholder="Apellido" value={last_name} setValue={setLastName}id={`last_name-${client.id}`} label={'Apellido'} required  setErrors={setErrors}/>
+          <Input type="date" placeholder="Fecha de Nacimiento" value={birth_date} setValue={setBirthDate}id={`birth_date-${client.id}`} label={'Fecha de Nacimiento'} setErrors={setErrors} />
+          <Input type="text" placeholder="CUIT" value={cuit} setValue={setCuit}id={`cuit-${client.id}`} label={'CUIT'}required setErrors={setErrors}/>
+          <Input type="text" placeholder="Dirección" value={address} setValue={setAddress}id={`address-${client.id}`} label={'Dirección'} setErrors={setErrors}/>
+          <Input type="text" placeholder="Teléfono" value={phone_number} setValue={setPhoneNumber}id={`phone_number-${client.id}`} label={'Teléfono'} required setErrors={setErrors}/>
+          <Input type="text" placeholder="Email" value={email} setValue={setEmail}id={`email-${client.id}`} label={'Email'} required setErrors={setErrors}/>
           <button className={edition?"user-form_button-edit":"user-form_button-add"}type="submit">{edition? "Guardar":"Agregar"}</button>
           {edition && <button className='user-form_button-delete' type="button" onClick={deleteClient}>Eliminar</button>}
         <div className='errors-container'>
