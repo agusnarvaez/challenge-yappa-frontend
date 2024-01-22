@@ -74,10 +74,12 @@
 }
 .user-form_button-edit{
     background-color: var(--info-color);
+    margin-top: 10px;
 }
 .user-form_button-edit:hover{
     background-color: var(--info-color-hover);
     color: white;
+
 }
 .user-form_button-edit:active{
     background-color: var(--info-color-active);
@@ -85,6 +87,8 @@
 .user-form_button-delete{
     background-color: var(--danger-color);
     color: white;
+    margin-top: 10px;
+
 }
 .user-form_button-delete:hover{
     background-color: var(--danger-color-hover);
