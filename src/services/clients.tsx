@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { Client } from '../models/client'
 
-const rest_server_url = 'https://challenge-yappa-backend.fly.dev/api-docs'
+const rest_server_url = 'http://localhost:3000'
 class ClientsService {
     async allInstances(search:string) {
         const buildParams = search ? `?search=`+search : ''
