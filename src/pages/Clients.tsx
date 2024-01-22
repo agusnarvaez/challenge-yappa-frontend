@@ -22,12 +22,26 @@ export default function Clients() {
     const [reload, setReload] = useState(false)
     useEffect(() => {
         const fetchClients = async () => {
-            const response = await clientsService.allInstances(searchValue)
-            setClients(response)
+            try{
+              const response = await clientsService.allInstances(searchValue)
+              setClients(response)
+
+            }
+            catch(error:any){
+              console.log(error)
+              setNotification({
+                message:"Error al obtener los clientes",
+                type:"error"
+              })
+              setTimeout(() => {
+                setNotification(emptyNotification)
+              }, 5000)
+
+            }
         }
         fetchClients()
 
-    }, [notification,reload])
+    }, [reload])
     return (
       <>
         <Header />
